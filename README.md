@@ -32,4 +32,4 @@ This project is released under the [CC0 1.0 Universal](https://creativecommons.o
 
 ---
 
-For any inquiries, suggestions, or feedback, please contact me via my GitHub profile/LinkedIn
+For any inquiries, suggestions, or feedback, please contact me via my GitHub/LinkedIn profiles
