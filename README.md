@@ -13,17 +13,17 @@ The Watchtower is a project dedicated to enhancing communication and rapid respo
 ## New Features & Enhancements
 
 - **Multi-Language Support:**  
-  Users can now select a language from several options (English, Spanish, French, Russian, German, and Chinese). The chosen language persists between page loads and navigations using localStorage. This ensures a consistent user experience even after refreshing or moving between pages.
+  Users can now select a language from several options (English, Spanish, French, Russian, German, and Chinese).
 
 - **Improved Tip Line Dashboard:**  
-  The tip line dashboard now includes a dedicated return button positioned to the left of the dashboard header. This button allows users to quickly navigate back to the main page without disrupting the overall layout.
+  The tip line dashboard now includes a dedicated return button to allow users to quickly navigate back to the main page without disrupting the overall layout.
 
 - **Responsive and Intuitive UI:**  
   Enhancements have been made to button designs and layout organization in both the homepage and tip line dashboard, ensuring a cohesive look across the platform.
 
 ## Interest in Law Enforcement
 
-My personal interest in law enforcement drives this project. I am passionate about creating tools that enhance public safety and facilitate efficient communication between the community and law enforcement agencies. By bridging technology and public service, I aim to contribute to more effective and timely responses to incidents and tips.
+My personal interest in federal law enforcement drives this project. I am passionate about creating tools that enhance public safety and facilitate efficient communication between the community and law enforcement agencies. By bridging technology and public service, I aim to contribute to more effective and timely responses to incidents and tips.
 
 ## Future Work
 
