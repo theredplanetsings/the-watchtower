@@ -3,7 +3,7 @@ const translations = {
     en: {
          headerTitle: "The Watchtower",
          headerSubtitle: "A law enforcement project",
-         homepageWelcome: "Welcome to The Watchtower. This centralized platform brings together various tools and resources designed to enhance communication between the community and law enforcement agencies. Explore our tip line dashboard, interactive maps, and other counterterrorism/counterintelligence tools as we continuously work to add more features.",
+         homepageWelcome: "Welcome to The Watchtower. This centralized platform will bring together various tools and resources to enhance communication between civilians and law enforcement agencies. More functionalities will be added in the future.",
          footerText: "© 2025 The Watchtower",
          loaderText: "Entering The Watchtower...",
          reconfiguringText: "Reconfiguring...",
@@ -12,7 +12,7 @@ const translations = {
     es: {
          headerTitle: "La Torre de Vigilancia",
          headerSubtitle: "Un proyecto de las fuerzas del orden",
-         homepageWelcome: "Bienvenido a La Torre de Vigilancia. Esta plataforma centralizada reúne diversas herramientas y recursos diseñados para mejorar la comunicación entre la comunidad y las agencias de seguridad.",
+         homepageWelcome: "Bienvenido a La Atalaya. Esta plataforma centralizada reunirá diversas herramientas y recursos para mejorar la comunicación entre civiles y cuerpos de seguridad. En el futuro se añadirán más funcionalidades.",
          footerText: "© 2025 La Torre de Vigilancia",
          loaderText: "Entrando en La Torre de Vigilancia...",
          reconfiguringText: "Reconfigurando...",
@@ -21,7 +21,7 @@ const translations = {
     fr: {
          headerTitle: "La Tour de Garde",
          headerSubtitle: "Un projet des forces de l'ordre",
-         homepageWelcome: "Bienvenue sur La Tour de Garde. Cette plateforme centralisée réunit divers outils et ressources pour améliorer la communication entre la communauté et les agences de sécurité.",
+         homepageWelcome: "Bienvenue à la Tour de Garde. Cette plateforme centralisée rassemblera divers outils et ressources afin d'améliorer la communication entre les civils et les forces de l'ordre. D'autres fonctionnalités seront ajoutées à l'avenir.",
          footerText: "© 2025 La Tour de Garde",
          loaderText: "Entrée dans La Tour de Garde...",
          reconfiguringText: "Reconfiguration...",
@@ -30,7 +30,7 @@ const translations = {
     ru: {
          headerTitle: "Сторожевая Башня",
          headerSubtitle: "Проект правоохранительных органов",
-         homepageWelcome: "Добро пожаловать в Сторожевую Башню. Эта централизованная платформа объединяет различные инструменты и ресурсы, предназначенные для улучшения коммуникации между сообществом и правоохранительными органами.",
+         homepageWelcome: "Добро пожаловать в «Сторожевую башню». Эта централизованная платформа объединит различные инструменты и ресурсы для улучшения коммуникации между гражданскими лицами и правоохранительными органами. В будущем будут добавлены дополнительные функции.",
          footerText: "© 2025 Сторожевая Башня",
          loaderText: "Вход в Сторожевую Башню...",
          reconfiguringText: "Переконфигурация...",
@@ -39,7 +39,7 @@ const translations = {
     de: {
          headerTitle: "Der Wachturm",
          headerSubtitle: "Ein Projekt der Strafverfolgung",
-         homepageWelcome: "Willkommen beim Wachturm. Diese zentrale Plattform vereint verschiedene Werkzeuge und Ressourcen zur Verbesserung der Kommunikation zwischen der Gemeinschaft und den Strafverfolgungsbehörden.",
+         homepageWelcome: "Willkommen bei The Watchtower. Diese zentrale Plattform wird verschiedene Tools und Ressourcen zusammenführen, um die Kommunikation zwischen Zivilisten und Strafverfolgungsbehörden zu verbessern. Weitere Funktionalitäten werden in Zukunft hinzugefügt werden.",
          footerText: "© 2025 Der Wachturm",
          loaderText: "Betrete den Wachturm...",
          reconfiguringText: "Neu konfigurieren...",
@@ -48,7 +48,7 @@ const translations = {
     zh: {
          headerTitle: "瞭望塔",
          headerSubtitle: "一个执法项目",
-         homepageWelcome: "欢迎来到瞭望塔。这个中心化平台整合了多种工具和资源，旨在加强社区与执法机构之间的沟通。",
+         homepageWelcome: "欢迎来到守望先锋。这个集中式平台将汇集各种工具和资源，以加强平民与执法机构之间的沟通。未来还将增加更多功能。",
          footerText: "© 2025 瞭望塔",
          loaderText: "正在进入瞭望塔...",
          reconfiguringText: "重新配置中...",
