@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Orbitron', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+main,
+footer {
+    padding-top: 20px; 
+}
+
+main {
+    flex: 1;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.homepage-content {
+    max-width: 800px;
+    margin: 0 auto; 
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+.widget {
+    background: #1d1d1d;
+    border: 1px solid #333;
+    border-radius: 8px;
+    width: 200px;
+    height: 300px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.widget:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+    color: #777;
+}
+
+/* Loading Screen */
+#loader {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #121212;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ff0000;
+    font-family: 'Orbitron', sans-serif;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#loader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-animation {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #ff0000;
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+#loader p {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* Top Buttons Container */
+.top-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Social Buttons */
+.social-buttons {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    visibility: hidden; /* Hidden until animation ends */
+    transition: opacity 0.3s ease;
+}
+
+.social-button {
+    padding: 5px 10px;
+    background: #1d1d1d;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #ff0000;
+    font-family: 'Orbitron', sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.social-button:hover {
+    background: #333;
+}
+
+/* Language Buttons */
+.language-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-end;
+    visibility: hidden; /* Hidden until animation ends */
+    transition: opacity 0.3s ease;
+    max-width: 100%;
+    transform: translateX(-20px);
+}
+
+.language-button {
+    background: #1d1d1d;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 5px 10px;
+    color: #00ffee;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.language-button.active {
+    background: #00ffee;
+    color: #121212;
+}
+
+.language-button:hover {
+    background: #333;
+}
+
+/* Tipline Access Button */
+.tipline-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    margin: 50px auto;
+    background: #1d1d1d;
+    border: 1px solid #333;
+    border-radius: 10px;
+    color: red;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.tipline-button:hover {
+    background: #333;
+}
