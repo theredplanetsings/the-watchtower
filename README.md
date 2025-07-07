@@ -1,6 +1,6 @@
 # The Watchtower
 
-The Watchtower is a project dedicated to enhancing communication and rapid response within the field of law enforcement. This project serves as a tip line dashboard that connects users with various law enforcement agencies, offering an intuitive interface for reporting tips and staying informed.
+This is a project dedicated to enhancing communication and rapid response within the field of law enforcement. This project serves as a tip line dashboard that connects users with various law enforcement agencies, offering an intuitive interface for reporting tips and staying informed.
 
 ## Overview
 
