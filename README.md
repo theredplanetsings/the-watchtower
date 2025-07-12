@@ -8,7 +8,7 @@ This is a project dedicated to enhancing communication and rapid response within
   The Watchtower provides a centralized platform for reporting and tracking tips related to law enforcement activities. It connects users with agencies such as the FBI, CIA, NSA, and others, streamlining the process of submitting critical information.
 
 - **Technology:**  
-  This project leverages modern web technologies, including D3.js for data visualization and localStorage for persisting user settings. The design is built with a strong focus on user experience and accessibility.
+  This project uses D3.js for data visualization and localStorage for persisting user settings. The design is built with a strong focus on user experience and accessibility.
 
 ## New Features & Enhancements
 
