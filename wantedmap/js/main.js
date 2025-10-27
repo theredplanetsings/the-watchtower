@@ -8,7 +8,8 @@ const translations = {
          loaderText: "Entering The Watchtower...",
          reconfiguringText: "Reconfiguring...",
          tiplineButton: "Access Tip Line Dashboard",
-         tooloneButton: "Access Tool One"
+         missingMapButton: "View Missing Persons Map",
+         missingMapTitle: "Missing Persons Map",
     },
     es: {
          headerTitle: "La Torre de Vigilancia",
@@ -18,7 +19,8 @@ const translations = {
          loaderText: "Entrando en La Torre de Vigilancia...",
          reconfiguringText: "Reconfigurando...",
          tiplineButton: "Acceder al tablero de denuncias",
-         tooloneButton: "Acceder a la Herramienta Uno"
+         missingMapButton: "Ver mapa de personas desaparecidas",
+         missingMapTitle: "Mapa de Personas Desaparecidas"
     },
     fr: {
          headerTitle: "La Tour de Garde",
@@ -28,7 +30,8 @@ const translations = {
          loaderText: "Entrée dans La Tour de Garde...",
          reconfiguringText: "Reconfiguration...",
          tiplineButton: "Accéder au tableau de bord des dénonciations",
-         tooloneButton: "Accéder à l'Outil Un"
+         missingMapButton: "Voir la carte des personnes disparues",
+         missingMapTitle: "Carte des personnes disparues"
     },
     ru: {
          headerTitle: "Сторожевая Башня",
@@ -38,7 +41,8 @@ const translations = {
          loaderText: "Вход в Сторожевую Башню...",
          reconfiguringText: "Переконфигурация...",
          tiplineButton: "Перейти к панели подачи сообщений",
-         tooloneButton: "Перейти к Инструмент Один"
+         missingMapButton: "Посмотреть карту пропавших без вести",
+         missingMapTitle: "Карта пропавших без вести"
     },
     de: {
          headerTitle: "Der Wachturm",
@@ -48,7 +52,8 @@ const translations = {
          loaderText: "Betrete den Wachturm...",
          reconfiguringText: "Neu konfigurieren...",
          tiplineButton: "Zum Hinweis-Dashboard",
-         tooloneButton: "Auf Tool One zugreifen"
+         missingMapButton: "Vermisstenkarte anzeigen",
+         missingMapTitle: "Vermisstenkarte"
     },
     zh: {
          headerTitle: "瞭望塔",
@@ -58,7 +63,8 @@ const translations = {
          loaderText: "正在进入瞭望塔...",
          reconfiguringText: "重新配置中...",
          tiplineButton: "进入举报面板",
-         tooloneButton: "访问工具一"
+         missingMapButton: "查看失踪人员地图",
+         missingMapTitle: "失踪人员地图"
     }
 };
 
@@ -132,3 +138,110 @@ d3.selectAll('.language-button').on('click', function() {
         d3.select(".language-buttons").style("visibility", "visible");
     }, 2000);
 });
+
+// --- Missing Persons Map Tool ---
+
+// Hardcoded missing persons data
+const missingPersons = [
+    { name: "Jane Doe", age: 17, date: "2025-05-10", lat: 37.7749, lon: -122.4194, city: "San Francisco, CA", info: "Last seen wearing a red jacket." },
+    { name: "Carlos Ruiz", age: 22, date: "2025-04-22", lat: 34.0522, lon: -118.2437, city: "Los Angeles, CA", info: "Last seen near Union Station." },
+    { name: "Marie Dubois", age: 15, date: "2025-05-01", lat: 40.7128, lon: -74.0060, city: "New York, NY", info: "Last seen in Central Park." }
+];
+
+// Show modal and draw map
+const missingMapBtn = document.getElementById('missing-map-btn');
+if (missingMapBtn) {
+    missingMapBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('missing-map-modal').style.display = 'flex';
+        drawMissingMap();
+        document.getElementById('missing-map-info').textContent = '';
+    });
+}
+
+// Close modal
+const closeMissingMapBtn = document.getElementById('close-missing-map');
+if (closeMissingMapBtn) {
+    closeMissingMapBtn.addEventListener('click', function() {
+        document.getElementById('missing-map-modal').style.display = 'none';
+        d3.select("#missing-map").selectAll("*").remove();
+    });
+}
+
+// Draw a simple US map with D3 and plot missing persons
+function drawMissingMap() {
+    // gets the actual rendered size of the map container
+    const mapDiv = document.getElementById('missing-map');
+    const width = mapDiv.clientWidth;
+    const height = mapDiv.clientHeight;
+    d3.select("#missing-map").selectAll("*").remove();
+
+    const projection = d3.geoAlbersUsa().translate([width/2, height/2]).scale(width * 1.1);
+    const path = d3.geoPath().projection(projection);
+
+    const svg = d3.select("#missing-map")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    svg.append("rect")
+        .attr("width", width)
+        .attr("height", height)
+        .attr("fill", "#181818");
+
+    d3.json("https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json").then(us => {
+        const states = topojson.feature(us, us.objects.states);
+
+        svg.append("g")
+            .selectAll("path")
+            .data(states.features)
+            .enter()
+            .append("path")
+            .attr("d", path)
+            .attr("fill", "#222")
+            .attr("stroke", "#444")
+            .attr("stroke-width", 1);
+
+        svg.selectAll("circle")
+            .data(missingPersons)
+            .enter()
+            .append("circle")
+            .attr("cx", d => {
+                const coords = projection([d.lon, d.lat]);
+                return coords ? coords[0] : -100;
+            })
+            .attr("cy", d => {
+                const coords = projection([d.lon, d.lat]);
+                return coords ? coords[1] : -100;
+            })
+            .attr("r", 10)
+            .attr("fill", "#ff0000")
+            .attr("stroke", "#fff")
+            .attr("stroke-width", 2)
+            .style("cursor", "pointer")
+            .on("click", function(event, d) {
+                document.getElementById('missing-map-info').innerHTML =
+                    `<strong>${d.name}</strong> (${d.age})<br>
+                    <em>${d.city}</em><br>
+                    <span>${d.date}</span><br>
+                    <small>${d.info}</small>`;
+            });
+
+        svg.selectAll("text")
+            .data(missingPersons)
+            .enter()
+            .append("text")
+            .attr("x", d => {
+                const coords = projection([d.lon, d.lat]);
+                return coords ? coords[0] : -100;
+            })
+            .attr("y", d => {
+                const coords = projection([d.lon, d.lat]);
+                return coords ? coords[1] - 15 : -100;
+            })
+            .attr("text-anchor", "middle")
+            .attr("fill", "#00ffee")
+            .attr("font-size", "0.9rem")
+            .text(d => d.name);
+    });
+}
